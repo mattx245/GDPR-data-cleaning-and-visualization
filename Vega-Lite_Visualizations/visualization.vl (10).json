@@ -1,0 +1,103 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A count of the number of total GDPR Violation icident that has occured in each country. Each incident may contain multiple GDPR article violations",
+  "data": {
+    "url": "https://raw.githubusercontent.com/mattx245/GDPR-data-cleaning-and-visualization/main/cleaned_gdpr_data.csv",
+    "format": {"type": "csv"}
+  },
+  "selection": {
+    "c1": {
+      "type": "single",
+      "fields": ["name"],
+      "bind": {
+        "input": "select",
+        "options": [
+          "Poland",
+          "Romania",
+          "Spain",
+          "Greece",
+          "Germany",
+          "Belgium",
+          "Austria",
+          "Bulgaria",
+          "Latvia",
+          "Sweden",
+          "France",
+          "United Kingdom",
+          "Hungary",
+          "Netherlands",
+          "Denmark",
+          "Lithuania",
+          "Czech Republic",
+          "Norway",
+          "Italy",
+          "Portugal",
+          "Malta",
+          "Cyprus",
+          "Slovakia",
+          "Iceland",
+          "Croatia"
+        ]
+      }
+    },
+    "c2": {
+      "type": "single",
+      "fields": ["name"],
+      "bind": {
+        "input": "select",
+        "options": [
+          "Poland",
+          "Romania",
+          "Spain",
+          "Greece",
+          "Germany",
+          "Belgium",
+          "Austria",
+          "Bulgaria",
+          "Latvia",
+          "Sweden",
+          "France",
+          "United Kingdom",
+          "Hungary",
+          "Netherlands",
+          "Denmark",
+          "Lithuania",
+          "Czech Republic",
+          "Norway",
+          "Italy",
+          "Portugal",
+          "Malta",
+          "Cyprus",
+          "Slovakia",
+          "Iceland",
+          "Croatia"
+        ]
+      }
+    }
+  },
+  "transform": [
+    {"calculate": "datum.name === c1_name", "as": "selected_c1"},
+    {"calculate": "datum.name === c2_name", "as": "selected_c2"}
+  ],
+  "mark": "bar",
+  "encoding": {
+    "y": {"field": "name", "type": "ordinal", "title": "Country"},
+    "x": {
+      "aggregate": "count",
+      "type": "quantitative",
+      "title": "Count of Violation Incidents"
+    },
+    "tooltip": [
+      {"aggregate": "count", "title": "Count of Violations Incidents: "}
+    ],
+    "opacity": {
+      "condition": [
+        {"selection": "c1", "value": 1},
+        {"selection": "c2", "value": 1}
+      ],
+      "value": 0.2
+    }
+  },
+  "title": "Number of GDPR Violation Incidents by Country",
+  "config": {}
+}
