@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
-  "description": "A choloropeth map displaying the sum of fines paid by various european countries for gdpr violations",
+  "description": "A choloropeth map displaying the sum of fines paid by various european countries for gdpr violations. Hovering over allows for more detailed statistics via the tooltip",
   "title": "Sum of Fines Paid for GDPR Violations by Country",
   "width": 450,
   "height": 600,
