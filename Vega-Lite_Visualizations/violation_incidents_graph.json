@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "A count of the number of total GDPR Violation incident that have occured in each country. Each incident may contain multiple GDPR article violations. Comparative functionality allows direct comparison between any two countries",
+  "description": "A count of the number of total GDPR Violation incidents that have occured in each country. Each incident may contain multiple GDPR article violations. Comparative functionality allows direct comparison between any two countries",
   "data": {
     "url": "https://raw.githubusercontent.com/mattx245/GDPR-data-cleaning-and-visualization/main/cleaned_gdpr_data.csv",
     "format": {"type": "csv"}
