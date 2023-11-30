@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "description": "A comparative graph showing the total GDPR article violations for each country. Some non-article data excluded. Graph includes selection functionality for examining instances of specific article violations",
+    "description": "A comparative graph showing the total GDPR article violations for each country across all violation incidents. Some non- GDPR article data excluded. Graph includes selection functionality for examining instances of specific article violations",
   "data": {
     "url": "https://raw.githubusercontent.com/mattx245/GDPR-data-cleaning-and-visualization/main/cleaned_gdpr_data_graph.csv",
     "format": {"type": "csv"}
